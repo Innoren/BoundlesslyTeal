@@ -1,0 +1,25 @@
+<!-- This is a reference showing how to add data-i18n attributes -->
+<!-- Copy these patterns and apply them to your HTML -->
+
+<!-- NAVIGATION EXAMPLE -->
+<ul class="nav-links" id="navLinks">
+  <li><a href="#home" data-i18n="nav.home">Home</a></li>
+  <li><a href="#about" data-i18n="nav.about">About</a></li>
+  <li><a href="#services" data-i18n="nav.services">Services</a></li>
+  <li><a href="#why" data-i18n="nav.why">Why Choose Us</a></li>
+  <li><a href="#clients" data-i18n="nav.clients">Clients</a></li>
+  <li><a href="#contact" class="nav-cta" data-i18n="nav.cta">Let's Talk</a></li>
+</ul>
+
+<!-- HERO SECTION EXAMPLE -->
+<h1 class="hero-tagline" data-i18n="hero.tagline">Empowering <em>Growth</em> Through Compassionate Coaching</h1>
+<p class="hero-sub" data-i18n="hero.subtitle">Transform your life...</p>
+<a href="#contact" class="btn-primary" data-i18n="hero.btn.primary">Start Your Journey</a>
+<a href="#about" class="btn-secondary" data-i18n="hero.btn.secondary">Learn More</a>
+
+<!-- FORM EXAMPLE -->
+<label data-i18n="contact.form.name">Full Name</label>
+<input type="text" name="name" required data-i18n-placeholder="contact.form.name" />
+
+<!-- The pattern is: add data-i18n="key" to any element with text you want translated -->
+<!-- For input placeholders, use data-i18n-placeholder="key" -->
