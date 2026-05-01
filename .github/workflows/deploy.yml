@@ -12,24 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Upload index.html via FTP
+        uses: sebastianpopp/ftp-action@releases/v2
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          timeout: 120000
-          local-dir: ./
-          server-dir: /home2/odilaxmy/public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/*.py
-            **/BoundlesslyTealHTML.html
-            **/BoundlesslyTealHTML_backup.html
-            **/index_backup2.html
-            **/add-*.js
-            **/add-i18n-complete.html
+          localDir: "."
+          remoteDir: "/home2/odilaxmy/public_html"
+          options: "--include=index.html --include=translations.js --exclude=*"
