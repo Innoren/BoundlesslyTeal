@@ -12,12 +12,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Upload index.html via FTP
-        uses: sebastianpopp/ftp-action@releases/v2
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "."
-          remoteDir: "/home2/odilaxmy/public_html"
-          options: "--include=index.html --include=translations.js --exclude=*"
+          port: 21
+          protocol: ftp
+          local-dir: ./
+          server-dir: /home2/odilaxmy/public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github*
+            **/.github*/**
+            **/node_modules/**
+            **/*.py
+            **/BoundlesslyTealHTML.html
+            **/BoundlesslyTealHTML_backup.html
+            **/index_backup2.html
+            **/add-i18n-complete.html
+            **/add-translations.js
+            **/README.md
