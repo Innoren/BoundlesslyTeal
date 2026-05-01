@@ -1466,7 +1466,9 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('formSuccess').style.display = 'none';
         }, 5000);
       } else {
-        throw new Error('Form submission failed');
+        return response.json().then(data => {
+          throw new Error(data.error || 'Status: ' + response.status);
+        });
       }
     })
     .catch(error => {
@@ -1477,13 +1479,13 @@ document.addEventListener('DOMContentLoaded', () => {
       successEl.style.background = '#fde8e8';
       successEl.style.borderColor = '#e53e3e';
       successEl.style.color = '#c53030';
-      successEl.querySelector('span').textContent = '❌ Something went wrong. Please email us directly at justinsinclair1208@boundlesslytealcoaching.com';
+      successEl.querySelector('span').textContent = '❌ Error: ' + error.message;
       setTimeout(() => {
         successEl.style.display = 'none';
         successEl.style.background = '';
         successEl.style.borderColor = '';
         successEl.style.color = '';
-      }, 6000);
+      }, 8000);
     });
   }
 
