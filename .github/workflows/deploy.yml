@@ -22,7 +22,7 @@ jobs:
           protocol: ftp
           timeout: 120000
           local-dir: ./
-          server-dir: /public_html/
+          server-dir: /home2/odilaxmy/public_html/
           exclude: |
             **/.git*
             **/.git*/**
