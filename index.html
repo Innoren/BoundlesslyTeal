@@ -1470,9 +1470,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
     .catch(error => {
-      btn.textContent = 'Error - Try Again';
+      btn.textContent = 'Send Message ✦';
       btn.disabled = false;
-      alert('Sorry, there was an error sending your message. Please try again or email directly.');
+      const successEl = document.getElementById('formSuccess');
+      successEl.style.display = 'block';
+      successEl.style.background = '#fde8e8';
+      successEl.style.borderColor = '#e53e3e';
+      successEl.style.color = '#c53030';
+      successEl.querySelector('span').textContent = '❌ Something went wrong. Please email us directly at justinsinclair1208@boundlesslytealcoaching.com';
+      setTimeout(() => {
+        successEl.style.display = 'none';
+        successEl.style.background = '';
+        successEl.style.borderColor = '';
+        successEl.style.color = '';
+      }, 6000);
     });
   }
 
