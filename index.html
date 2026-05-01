@@ -396,57 +396,57 @@
       background: white; border-radius: 24px; padding: 2.5rem 2rem;
       box-shadow: var(--card-shadow); display: flex; flex-direction: column;
       position: relative; overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
-    .package-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(42,157,143,0.18); }
-    .package-card.featured {
+    .package-card:hover {
+      transform: translateY(-6px); box-shadow: 0 16px 48px rgba(42,157,143,0.18);
       background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
-      color: white;
     }
     .package-card::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
       background: linear-gradient(90deg, var(--teal), var(--lavender));
     }
-    .package-card.featured::before { background: rgba(255,255,255,0.3); }
+    .package-card:hover::before { background: rgba(255,255,255,0.3); }
     .package-badge {
       display: inline-block; background: var(--lavender-light); color: var(--lavender);
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px;
-      margin-bottom: 1rem;
+      margin-bottom: 1rem; transition: background 0.3s, color 0.3s;
     }
-    .package-card.featured .package-badge { background: rgba(255,255,255,0.2); color: white; }
+    .package-card:hover .package-badge { background: rgba(255,255,255,0.2); color: white; }
     .package-card h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem; font-weight: 400; color: var(--text); margin-bottom: 0.3rem;
+      transition: color 0.3s;
     }
-    .package-card.featured h3 { color: white; }
-    .package-tag { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin-bottom: 1.2rem; font-style: italic; }
-    .package-card.featured .package-tag { color: rgba(255,255,255,0.85); }
+    .package-card:hover h3 { color: white; }
+    .package-tag { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; margin-bottom: 1.2rem; font-style: italic; transition: color 0.3s; }
+    .package-card:hover .package-tag { color: rgba(255,255,255,0.85); }
     .package-goal { margin-bottom: 1.2rem; }
-    .package-goal strong { font-size: 0.85rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.05em; }
-    .package-card.featured .package-goal strong { color: var(--teal-light); }
-    .package-goal p { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; margin-top: 0.3rem; }
-    .package-card.featured .package-goal p { color: rgba(255,255,255,0.85); }
+    .package-goal strong { font-size: 0.85rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.3s; }
+    .package-card:hover .package-goal strong { color: var(--teal-light); }
+    .package-goal p { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; margin-top: 0.3rem; transition: color 0.3s; }
+    .package-card:hover .package-goal p { color: rgba(255,255,255,0.85); }
     .package-features { list-style: none; margin-bottom: 1.5rem; flex: 1; }
     .package-features li {
       font-size: 0.88rem; color: var(--text-light); line-height: 1.7;
       padding: 0.4rem 0; border-bottom: 1px solid rgba(42,157,143,0.08);
-      display: flex; gap: 0.5rem;
+      display: flex; gap: 0.5rem; transition: color 0.3s, border-color 0.3s;
     }
-    .package-card.featured .package-features li { color: rgba(255,255,255,0.85); border-bottom-color: rgba(255,255,255,0.1); }
-    .package-features li::before { content: "✦"; color: var(--teal); font-size: 0.7rem; margin-top: 0.3rem; flex-shrink: 0; }
-    .package-card.featured .package-features li::before { color: var(--teal-light); }
+    .package-card:hover .package-features li { color: rgba(255,255,255,0.85); border-bottom-color: rgba(255,255,255,0.1); }
+    .package-features li::before { content: "✦"; color: var(--teal); font-size: 0.7rem; margin-top: 0.3rem; flex-shrink: 0; transition: color 0.3s; }
+    .package-card:hover .package-features li::before { color: var(--teal-light); }
     .package-price {
       text-align: center; padding-top: 1.2rem;
-      border-top: 1px solid rgba(42,157,143,0.1);
+      border-top: 1px solid rgba(42,157,143,0.1); transition: border-color 0.3s;
     }
-    .package-card.featured .package-price { border-top-color: rgba(255,255,255,0.2); }
-    .package-price .price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--teal); }
-    .package-card.featured .package-price .price { color: white; }
-    .package-price .sessions { font-size: 0.82rem; color: var(--text-light); }
-    .package-card.featured .package-price .sessions { color: rgba(255,255,255,0.75); }
-    .package-price .group { font-size: 0.8rem; color: var(--lavender); font-weight: 600; margin-top: 0.2rem; }
-    .package-card.featured .package-price .group { color: var(--teal-light); }
+    .package-card:hover .package-price { border-top-color: rgba(255,255,255,0.2); }
+    .package-price .price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--teal); transition: color 0.3s; }
+    .package-card:hover .package-price .price { color: white; }
+    .package-price .sessions { font-size: 0.82rem; color: var(--text-light); transition: color 0.3s; }
+    .package-card:hover .package-price .sessions { color: rgba(255,255,255,0.75); }
+    .package-price .group { font-size: 0.8rem; color: var(--lavender); font-weight: 600; margin-top: 0.2rem; transition: color 0.3s; }
+    .package-card:hover .package-price .group { color: var(--teal-light); }
     @media (max-width: 900px) { .packages-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
 
     /* ===== FOOTER ===== */
@@ -1185,7 +1185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <!-- Growth Package (featured) -->
-        <div class="package-card featured fade-in-up">
+        <div class="package-card fade-in-up">
           <div class="package-badge" data-i18n="packages.growth.duration">6 Weeks</div>
           <h3 data-i18n="packages.growth.title">Growth Package</h3>
           <p class="package-tag" data-i18n="packages.growth.tag">Designed for those who are ready to dive deeper into their personal development and need ongoing support.</p>
