@@ -22,6 +22,8 @@ jobs:
           protocol: ftp
           local-dir: ./
           server-dir: /home2/odilaxmy/public_html/
+          log-level: verbose
+          security: loose
           exclude: |
             **/.git*
             **/.git*/**
