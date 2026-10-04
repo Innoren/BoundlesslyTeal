@@ -182,6 +182,26 @@
       font-size: 1.25rem; font-style: italic; line-height: 1.7;
       color: var(--text); margin: 0 !important;
     }
+    .about-intro {
+      display: grid;
+      grid-template-columns: minmax(200px, 280px) 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 2.75rem;
+    }
+    .about-portrait {
+      width: 100%;
+      height: auto;
+      border-radius: 28px;
+      display: block;
+      box-shadow: var(--card-shadow);
+    }
+    .about-intro-text p {
+      color: var(--text-light);
+      line-height: 1.85;
+      font-size: 0.98rem;
+      margin: 0;
+    }
 
     /* ===== VISION/MISSION ===== */
     #vision {
@@ -496,6 +516,10 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       .about-grid, .vision-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-intro { grid-template-columns: 1fr; justify-items: center; gap: 1.5rem; }
+      .about-portrait { max-width: 280px; }
+      .about-intro-text { text-align: center; }
+      .about-intro-text .section-label { justify-content: center; }
       .services-grid, .why-grid, .clients-grid { grid-template-columns: 1fr 1fr; }
       .how-steps, .formats-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1003,11 +1027,16 @@ document.addEventListener('DOMContentLoaded', () => {
   <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-text fade-in-up">
+      <div class="about-intro fade-in-up">
+        <img class="about-portrait" src="images/amarfis.jpg" alt="Amarfis, Certified Professional Life Coach and founder of Boundlessly Teal Coaching" />
+        <div class="about-intro-text">
           <div class="section-label" data-i18n="about.meet">Meet Your Coach</div>
           <h2 class="section-title"><span data-i18n="about.hi">Hi, I'm</span> <em>Amarfis</em></h2>
           <p data-i18n="about.welcome">Welcome to Boundlessly Teal Coaching! I'm a Certified Professional Life Coach born in the Dominican Republic and raised in New Jersey. As a personal development coach, I'm passionate about helping individuals unlock their potential and create meaningful, fulfilling lives.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text fade-in-up">
           <p data-i18n="about.work">I work with people standing at the edge of change — those ready for the next chapter, but unsure how to begin. Through personalized coaching sessions, I guide clients to set clear goals, overcome limiting beliefs, and develop habits that lead to lasting success.</p>
           <p data-i18n="about.journey">Like many of my clients, I didn't set out to become a coach. I became one because I lived through my own seasons of uncertainty — moments where the life I built no longer felt like the life I was meant to live. I know what it feels like to question your path, to outgrow environments, to feel both excited and terrified about what's next.</p>
           <p data-i18n="about.discovered">What I discovered: <strong>Transitions are not breakdowns. They are invitations.</strong> An invitation to realign, to rediscover your voice, to build a life that reflects who you are now — not who you used to be.</p>
@@ -1293,7 +1322,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="contact-icon">✉️</div>
               <div>
                 <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:2px;" data-i18n="contact.email">Email</p>
-                <a href="mailto:amarfisdls@boundlesslytealcoaching.com">amarfisdls@boundlesslytealcoaching.com</a>
+                <a href="mailto:Boundlesslytealcoaching@outlook.com">Boundlesslytealcoaching@outlook.com</a>
               </div>
             </div>
             <div class="contact-detail">
@@ -1379,11 +1408,11 @@ document.addEventListener('DOMContentLoaded', () => {
     <h2>8. Data Security</h2>
     <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information. However, no online transmission or storage system is completely secure.</p>
     <h2>9. Your Privacy Rights</h2>
-    <p>Depending on your state of residence, you may have rights to request access, correction, or deletion of your personal information, and to opt out of certain data uses. To exercise these rights, contact: amarfisdls@boundlesslytealcoaching.com.</p>
+    <p>Depending on your state of residence, you may have rights to request access, correction, or deletion of your personal information, and to opt out of certain data uses. To exercise these rights, contact: Boundlesslytealcoaching@outlook.com.</p>
     <h2>10. Children's Privacy</h2>
     <p>Our Website and services are not intended for individuals under 18 years of age. We do not knowingly collect personal information from children.</p>
     <h2>11. Contact Information</h2>
-    <p>Boundlessly Teal Coaching, LLC &nbsp;|&nbsp; Tampa, Florida &nbsp;|&nbsp; Phone: (813) 391-0834 &nbsp;|&nbsp; Email: amarfisdls@boundlesslytealcoaching.com</p>
+    <p>Boundlessly Teal Coaching, LLC &nbsp;|&nbsp; Tampa, Florida &nbsp;|&nbsp; Phone: (813) 391-0834 &nbsp;|&nbsp; Email: Boundlesslytealcoaching@outlook.com</p>
   </div>
 </div>
 
@@ -1414,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <h2>10. Governing Law</h2>
     <p>These Terms are governed by the laws of the State of Florida. Any disputes shall be resolved in the courts located in Hillsborough County, Florida.</p>
     <h2>11. Contact Information</h2>
-    <p>Boundlessly Teal Coaching, LLC &nbsp;|&nbsp; Email: amarfisdls@boundlesslytealcoaching.com &nbsp;|&nbsp; Tampa, Florida</p>
+    <p>Boundlessly Teal Coaching, LLC &nbsp;|&nbsp; Email: Boundlesslytealcoaching@outlook.com &nbsp;|&nbsp; Tampa, Florida</p>
     <h2>Website Disclaimer</h2>
     <p>All information provided on this Website is for educational and informational purposes only. We make no guarantees regarding personal growth outcomes, business or income results, or emotional or psychological improvements. You are solely responsible for your decisions, actions, and results. Testimonials represent individual experiences and are not guarantees of results.</p>
   </div>
@@ -1442,7 +1471,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:8133910834">(813) 391-0834</a></li>
-          <li><a href="mailto:amarfisdls@boundlesslytealcoaching.com">amarfisdls@boundlesslytealcoaching.com</a></li>
+          <li><a href="mailto:Boundlesslytealcoaching@outlook.com">Boundlesslytealcoaching@outlook.com</a></li>
           <li><a href="#">Tampa, Florida</a></li>
         </ul>
       </div>
